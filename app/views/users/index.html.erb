@@ -1,0 +1,9 @@
+<h1>Home Index</h1>
+
+<% @users.each do |u| %>
+<p><%= u.name %></p> <%= link_to('Delete User', user_path(u.id), method: :delete) %>
+<% end %>
+<br>
+
+<%= flash[:notice] if flash[:notice] %>
+<%= flash[:alert] if flash[:alert] %>
